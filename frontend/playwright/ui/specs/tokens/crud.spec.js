@@ -95,7 +95,7 @@ test.describe("Tokens - creation", () => {
     await toggleDropdownButton.click();
     const option = page.getByRole("option", { name: "my-token" });
     await expect(option).toBeVisible();
-    const resolvedValue = option.getByText('3');
+    const resolvedValue = option.getByText("3");
     await expect(resolvedValue).toBeVisible();
     await option.click();
     await expect(
@@ -1882,8 +1882,9 @@ test.describe("User can't create groups that clash with token names", () => {
     await valueField.fill(value);
 
     // Check that the value has an error
-    const errorNode =
-      tokensUpdateCreateModal.getByText(`Group name of ${name} conflicts with a token of the same name in another active set.`);
+    const errorNode = tokensUpdateCreateModal.getByText(
+      `Group name of ${name} conflicts with a token of the same name in another active set.`,
+    );
 
     await expect(errorNode).toBeVisible();
 
@@ -1894,10 +1895,12 @@ test.describe("User can't create groups that clash with token names", () => {
     await expect(submitButton).toBeDisabled();
   };
 
-  test("User can't create Border Radius token with group name that clashes with existing token", async ({ page }) => {
+  test("User can't create Border Radius token with group name that clashes with existing token", async ({
+    page,
+  }) => {
     const { tokenThemesSetsSidebar, tokensSidebar, tokenContextMenuForToken } =
       await setupTokensFileRender(page, {
-        file: "workspace/get-file-tokens-all-types.json"
+        file: "workspace/get-file-tokens-all-types.json",
       });
 
     await expect(tokensSidebar).toBeVisible();
@@ -1907,10 +1910,12 @@ test.describe("User can't create groups that clash with token names", () => {
     await createBadToken(page, "Border Radius", "rad1.bad", "Value", "10");
   });
 
-  test("User can't create Color token with group name that clashes with existing token", async ({ page }) => {
+  test("User can't create Color token with group name that clashes with existing token", async ({
+    page,
+  }) => {
     const { tokenThemesSetsSidebar, tokensSidebar, tokenContextMenuForToken } =
       await setupTokensFileRender(page, {
-        file: "workspace/get-file-tokens-all-types.json"
+        file: "workspace/get-file-tokens-all-types.json",
       });
 
     await expect(tokensSidebar).toBeVisible();
@@ -1920,10 +1925,12 @@ test.describe("User can't create groups that clash with token names", () => {
     await createBadToken(page, "Color", "col1.bad", "Value", "red");
   });
 
-  test("User can't create Dimensions token with group name that clashes with existing token", async ({ page }) => {
+  test("User can't create Dimensions token with group name that clashes with existing token", async ({
+    page,
+  }) => {
     const { tokenThemesSetsSidebar, tokensSidebar, tokenContextMenuForToken } =
       await setupTokensFileRender(page, {
-        file: "workspace/get-file-tokens-all-types.json"
+        file: "workspace/get-file-tokens-all-types.json",
       });
 
     await expect(tokensSidebar).toBeVisible();
@@ -1933,10 +1940,12 @@ test.describe("User can't create groups that clash with token names", () => {
     await createBadToken(page, "Dimensions", "dim1.bad", "Value", "100");
   });
 
-  test("User can't create Font Size token with group name that clashes with existing token", async ({ page }) => {
+  test("User can't create Font Size token with group name that clashes with existing token", async ({
+    page,
+  }) => {
     const { tokenThemesSetsSidebar, tokensSidebar, tokenContextMenuForToken } =
       await setupTokensFileRender(page, {
-        file: "workspace/get-file-tokens-all-types.json"
+        file: "workspace/get-file-tokens-all-types.json",
       });
 
     await expect(tokensSidebar).toBeVisible();
@@ -1946,10 +1955,12 @@ test.describe("User can't create groups that clash with token names", () => {
     await createBadToken(page, "Font Size", "fsiz1.bad", "Value", "16");
   });
 
-  test("User can't create Font Weight token with group name that clashes with existing token", async ({ page }) => {
+  test("User can't create Font Weight token with group name that clashes with existing token", async ({
+    page,
+  }) => {
     const { tokenThemesSetsSidebar, tokensSidebar, tokenContextMenuForToken } =
       await setupTokensFileRender(page, {
-        file: "workspace/get-file-tokens-all-types.json"
+        file: "workspace/get-file-tokens-all-types.json",
       });
 
     await expect(tokensSidebar).toBeVisible();
@@ -1959,10 +1970,12 @@ test.describe("User can't create groups that clash with token names", () => {
     await createBadToken(page, "Font Weight", "wei1.bad", "Value", "400");
   });
 
-  test("User can't create Letter Spacing token with group name that clashes with existing token", async ({ page }) => {
+  test("User can't create Letter Spacing token with group name that clashes with existing token", async ({
+    page,
+  }) => {
     const { tokenThemesSetsSidebar, tokensSidebar, tokenContextMenuForToken } =
       await setupTokensFileRender(page, {
-        file: "workspace/get-file-tokens-all-types.json"
+        file: "workspace/get-file-tokens-all-types.json",
       });
 
     await expect(tokensSidebar).toBeVisible();
@@ -1972,10 +1985,12 @@ test.describe("User can't create groups that clash with token names", () => {
     await createBadToken(page, "Letter Spacing", "lspa1.bad", "Value", "1");
   });
 
-  test("User can't create Number token with group name that clashes with existing token", async ({ page }) => {
+  test("User can't create Number token with group name that clashes with existing token", async ({
+    page,
+  }) => {
     const { tokenThemesSetsSidebar, tokensSidebar, tokenContextMenuForToken } =
       await setupTokensFileRender(page, {
-        file: "workspace/get-file-tokens-all-types.json"
+        file: "workspace/get-file-tokens-all-types.json",
       });
 
     await expect(tokensSidebar).toBeVisible();
@@ -1985,10 +2000,12 @@ test.describe("User can't create groups that clash with token names", () => {
     await createBadToken(page, "Number", "num1.bad", "Value", "10");
   });
 
-  test("User can't create Rotation token with group name that clashes with existing token", async ({ page }) => {
+  test("User can't create Rotation token with group name that clashes with existing token", async ({
+    page,
+  }) => {
     const { tokenThemesSetsSidebar, tokensSidebar, tokenContextMenuForToken } =
       await setupTokensFileRender(page, {
-        file: "workspace/get-file-tokens-all-types.json"
+        file: "workspace/get-file-tokens-all-types.json",
       });
 
     await expect(tokensSidebar).toBeVisible();
@@ -1998,10 +2015,12 @@ test.describe("User can't create groups that clash with token names", () => {
     await createBadToken(page, "Rotation", "rot1.bad", "Value", "90");
   });
 
-  test("User can't create Sizing token with group name that clashes with existing token", async ({ page }) => {
+  test("User can't create Sizing token with group name that clashes with existing token", async ({
+    page,
+  }) => {
     const { tokenThemesSetsSidebar, tokensSidebar, tokenContextMenuForToken } =
       await setupTokensFileRender(page, {
-        file: "workspace/get-file-tokens-all-types.json"
+        file: "workspace/get-file-tokens-all-types.json",
       });
 
     await expect(tokensSidebar).toBeVisible();
@@ -2011,10 +2030,12 @@ test.describe("User can't create groups that clash with token names", () => {
     await createBadToken(page, "Sizing", "siz1.bad", "Value", "100");
   });
 
-  test("User can't create Spacing token with group name that clashes with existing token", async ({ page }) => {
+  test("User can't create Spacing token with group name that clashes with existing token", async ({
+    page,
+  }) => {
     const { tokenThemesSetsSidebar, tokensSidebar, tokenContextMenuForToken } =
       await setupTokensFileRender(page, {
-        file: "workspace/get-file-tokens-all-types.json"
+        file: "workspace/get-file-tokens-all-types.json",
       });
 
     await expect(tokensSidebar).toBeVisible();
@@ -2024,10 +2045,12 @@ test.describe("User can't create groups that clash with token names", () => {
     await createBadToken(page, "Spacing", "spa1.bad", "Value", "10");
   });
 
-  test("User can't create Stroke Width token with group name that clashes with existing token", async ({ page }) => {
+  test("User can't create Stroke Width token with group name that clashes with existing token", async ({
+    page,
+  }) => {
     const { tokenThemesSetsSidebar, tokensSidebar, tokenContextMenuForToken } =
       await setupTokensFileRender(page, {
-        file: "workspace/get-file-tokens-all-types.json"
+        file: "workspace/get-file-tokens-all-types.json",
       });
 
     await expect(tokensSidebar).toBeVisible();
@@ -2037,10 +2060,12 @@ test.describe("User can't create groups that clash with token names", () => {
     await createBadToken(page, "Stroke Width", "str1.bad", "Value", "2");
   });
 
-  test("User can't create Text Case token with group name that clashes with existing token", async ({ page }) => {
+  test("User can't create Text Case token with group name that clashes with existing token", async ({
+    page,
+  }) => {
     const { tokenThemesSetsSidebar, tokensSidebar, tokenContextMenuForToken } =
       await setupTokensFileRender(page, {
-        file: "workspace/get-file-tokens-all-types.json"
+        file: "workspace/get-file-tokens-all-types.json",
       });
 
     await expect(tokensSidebar).toBeVisible();
@@ -2050,23 +2075,33 @@ test.describe("User can't create groups that clash with token names", () => {
     await createBadToken(page, "Text Case", "cas1.bad", "Value", "uppercase");
   });
 
-test("User can't create Text Decoration token with group name that clashes with existing token", async ({ page }) => {
+  test("User can't create Text Decoration token with group name that clashes with existing token", async ({
+    page,
+  }) => {
     const { tokenThemesSetsSidebar, tokensSidebar, tokenContextMenuForToken } =
       await setupTokensFileRender(page, {
-        file: "workspace/get-file-tokens-all-types.json"
+        file: "workspace/get-file-tokens-all-types.json",
       });
 
     await expect(tokensSidebar).toBeVisible();
 
     await createSet(tokenThemesSetsSidebar, "Second set");
 
-    await createBadToken(page, "Text Decoration", "dec1.bad", "Value", "strike-through");
+    await createBadToken(
+      page,
+      "Text Decoration",
+      "dec1.bad",
+      "Value",
+      "strike-through",
+    );
   });
 
-  test("User can't create Typography token with group name that clashes with existing token", async ({ page }) => {
+  test("User can't create Typography token with group name that clashes with existing token", async ({
+    page,
+  }) => {
     const { tokenThemesSetsSidebar, tokensSidebar } =
       await setupTokensFileRender(page, {
-        file: "workspace/get-file-tokens-all-types.json"
+        file: "workspace/get-file-tokens-all-types.json",
       });
 
     await expect(tokensSidebar).toBeVisible();
@@ -2126,15 +2161,19 @@ test("User can't create Text Decoration token with group name that clashes with 
       name: "Save",
     });
 
-    const errorNode = tokensUpdateCreateModal.getByText("Group name of typ1.bad conflicts with a token of the same name in another active set.");
+    const errorNode = tokensUpdateCreateModal.getByText(
+      "Group name of typ1.bad conflicts with a token of the same name in another active set.",
+    );
     await expect(errorNode).toHaveCount(1);
     await expect(submitButton).toBeDisabled();
   });
 
-  test("User can't create Shadow token with group name that clashes with existing token", async ({ page }) => {
+  test("User can't create Shadow token with group name that clashes with existing token", async ({
+    page,
+  }) => {
     const { tokenThemesSetsSidebar, tokensSidebar } =
       await setupTokensFileRender(page, {
-        file: "workspace/get-file-tokens-all-types.json"
+        file: "workspace/get-file-tokens-all-types.json",
       });
 
     await expect(tokensSidebar).toBeVisible();
@@ -2184,7 +2223,9 @@ test("User can't create Text Decoration token with group name that clashes with 
       name: "Save",
     });
 
-    const errorNode = tokensUpdateCreateModal.getByText("Group name of sha1.bad conflicts with a token of the same name in another active set.");
+    const errorNode = tokensUpdateCreateModal.getByText(
+      "Group name of sha1.bad conflicts with a token of the same name in another active set.",
+    );
     await expect(errorNode).toHaveCount(1);
     await expect(submitButton).toBeDisabled();
   });
@@ -2388,6 +2429,139 @@ test.describe("Tokens tab - edition", () => {
     await valueSaturationSelector.click({ position: { x: 0, y: 0 } });
     await expect(valueField).toHaveValue(/^rgba(.*)$/);
   });
+
+  test("User sees self-reference error when editing a token to create a circular reference", async ({
+    page,
+  }) => {
+    const { tokensUpdateCreateModal, tokensSidebar, tokenContextMenuForToken } =
+      await setupEmptyTokensFileRender(page, {
+        flags: ["enable-token-combobox", "enable-feature-token-input"],
+      });
+
+    const tokensTabPanel = page.getByRole("tabpanel", { name: "tokens" });
+
+    // Create first token "base" with value "10"
+    const addTokenButton = tokensTabPanel.getByRole("button", {
+      name: "Add Token: Border Radius",
+    });
+    await addTokenButton.click();
+    await expect(tokensUpdateCreateModal).toBeVisible();
+    await createToken(page, "Border radius", "base", "Value", "combobox", "10");
+
+    await unfoldTokenType(tokensTabPanel, "border radius");
+    await expect(
+      tokensTabPanel.getByRole("button", { name: "base" }),
+    ).toBeEnabled();
+
+    // Create second token "linear" referencing "base"
+    await createToken(
+      page,
+      "Border radius",
+      "linear",
+      "Value",
+      "combobox",
+      "{base} * 0.25",
+    );
+
+    await expect(
+      tokensTabPanel.getByRole("button", { name: "linear" }),
+    ).toBeEnabled();
+
+    // Open the edit modal for "base"
+    const baseToken = tokensTabPanel.getByRole("button", { name: "base" });
+    await expect(baseToken).toBeVisible();
+    await baseToken.click({ button: "right" });
+    await expect(tokenContextMenuForToken).toBeVisible();
+    const editOption = tokenContextMenuForToken
+      .getByRole("listitem")
+      .filter({ hasText: "Edit token" });
+    await expect(editOption).toBeVisible();
+    await editOption.click();
+    await expect(tokensUpdateCreateModal).toBeVisible();
+
+    // Change value to reference "linear.0.25", creating a circular reference
+    const editValueField = tokensUpdateCreateModal.getByRole("combobox", {
+      name: "Value",
+    });
+    await editValueField.fill("{linear}");
+
+    // The circular reference error should appear gracefully
+    const selfRefError = tokensUpdateCreateModal.getByText(
+      "Token has self reference",
+    );
+    await expect(selfRefError).toBeVisible({ timeout: 5000 });
+
+    // Save button should be disabled
+    const editSubmitButton = tokensUpdateCreateModal.getByRole("button", {
+      name: "Save",
+    });
+    await expect(editSubmitButton).toBeDisabled();
+  });
+
+  test("User sees self-reference error for a three-step circular reference (A → B → C → A)", async ({
+    page,
+  }) => {
+    const { tokensUpdateCreateModal, tokensSidebar, tokenContextMenuForToken } =
+      await setupEmptyTokensFileRender(page, {
+        flags: ["enable-token-combobox", "enable-feature-token-input"],
+      });
+
+    const tokensTabPanel = page.getByRole("tabpanel", { name: "tokens" });
+
+    // Create first token "a" with value "10"
+    const addTokenButton = tokensTabPanel.getByRole("button", {
+      name: "Add Token: Border Radius",
+    });
+
+    await createToken(
+      page,
+      "Border radius",
+      "First",
+      "Value",
+      "combobox",
+      "10",
+    );
+    await createToken(
+      page,
+      "Border radius",
+      "Second",
+      "Value",
+      "combobox",
+      "{First}",
+    );
+    await createToken(
+      page,
+      "Border radius",
+      "Third",
+      "Value",
+      "combobox",
+      "{Second}",
+    );
+
+    // Edit "First" to reference "Third", completing the cycle A → B → C → A
+    const tokenA = tokensTabPanel.getByRole("button", { name: "First" });
+    await tokenA.click({ button: "right" });
+    await expect(tokenContextMenuForToken).toBeVisible();
+    await tokenContextMenuForToken.getByText("Edit token").click();
+    await expect(tokensUpdateCreateModal).toBeVisible();
+
+    const editValueField = tokensUpdateCreateModal.getByRole("combobox", {
+      name: "Value",
+    });
+    await editValueField.fill("{Third}");
+
+    // The circular reference error should appear gracefully
+    const selfRefError = tokensUpdateCreateModal.getByText(
+      "Token has self reference",
+    );
+    await expect(selfRefError).toBeVisible({ timeout: 5000 });
+
+    // Save button should be disabled
+    const editSubmitButton = tokensUpdateCreateModal.getByRole("button", {
+      name: "Save",
+    });
+    await expect(editSubmitButton).toBeDisabled();
+  });
 });
 
 test.describe("Tokens tab - delete", () => {
@@ -2422,7 +2596,14 @@ test("BUG: 14262 Token pill must be highlighted when value references a token in
   await expect(tokensSidebar).toBeVisible();
 
   await unfoldTokenType(tokensSidebar, "Border radius");
-  await createToken(page, "Border radius", "base-radius", "Value", "textbox", "20");
+  await createToken(
+    page,
+    "Border radius",
+    "base-radius",
+    "Value",
+    "textbox",
+    "20",
+  );
   await createToken(
     page,
     "Border radius",
@@ -2455,7 +2636,14 @@ test("BUG: 14262 Token pill must be highlighted when value references a token in
     .getByRole("button", { name: "New set" })
     .getByRole("checkbox")
     .click();
-  await createToken(page, "Border radius", "new-ref", "Value", "textbox", "{base-radius}");
+  await createToken(
+    page,
+    "Border radius",
+    "new-ref",
+    "Value",
+    "textbox",
+    "{base-radius}",
+  );
 
   // Pill is highlighted if the referenced token is in a different disabled set than the token with the reference
   const newBrokenTokenPill = tokensSidebar.getByRole("button", {
